@@ -1,5 +1,6 @@
-public class Account {
+package com.example;
 
+public class Account {
     private final String name;
 
     public Account(String name) {
@@ -7,10 +8,18 @@ public class Account {
     }
 
     public boolean checkNameToEmboss() {
-        /*
-             Этот метод должен проверять, что сохранённая через конструктор строка соответствует требованиям.
-             Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
-         */
+
+        if (name.length() >=3) {
+            return true;
+        }
+        else if (name.length()<=19) {
+            return true;
+        }
+        else if (name.equals("Тимоти Шаламе")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
