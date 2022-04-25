@@ -19,13 +19,13 @@ public class ParamAccountTest {
 
     @ParameterizedTest(name = "#{index} - Run test with username = {0}")
     @MethodSource("validUsernameProvider")
-    void test_username_regex_valid(String username) {
+    void usernameRegexValidTest(String username) {
         assertTrue(Account.checkNameToEmboss(username));
     }
 
     @ParameterizedTest(name = "#{index} - Run test with username = {0}")
     @MethodSource("invalidUsernameProvider")
-    void test_username_regex_invalid(String username) {
+    void usernameRegexInvalidTest(String username) {
         assertFalse(Account.checkNameToEmboss(username));
     }
 
