@@ -13,6 +13,7 @@ import org.junit.runners.Parameterized;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 
@@ -46,6 +47,7 @@ import static org.junit.Assert.assertNotNull;
                     {"Торалоарар Трпшшшррашгрукагурапловирш",false}, //невалидное значение: длина строки более 19 симолов
                     {"Торалоарар Трпшшшрра",false}, //невалидное значение: длина строки более 19 символов (20 символов)
                     {"А",false},               //невалидное значение: длина строки менее 3 символов (20 символов)
+                    {null, false},             //невалидное значение: null
 
             };
         }
@@ -54,9 +56,7 @@ import static org.junit.Assert.assertNotNull;
         public void checkValidName()  {
             Account account = new Account("Тимоти Шаламе");
             assertEquals(account.checkNameToEmboss(username),expected);
-            assertNotNull(username);
+
 
         }
-
-
     }
